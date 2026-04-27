@@ -105,7 +105,7 @@ Anton fait tester la ville à un proche → réaction "wow". Tag `v1.0` posé.
 ```
 roblox-cyber-hitman/
 ├── default.project.json     ← recette Rojo
-├── aftman.toml              ← outils épinglés
+├── rokit.toml               ← outils épinglés
 ├── .gitignore
 ├── README.md
 ├── docs/
