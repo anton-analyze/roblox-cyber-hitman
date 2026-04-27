@@ -58,15 +58,15 @@ local function spawnCar(name: string, x: number, z: number, color: Color3, neonC
 end
 
 function Vehicles.build(parent: Instance)
-	-- Voitures parquées le long du trottoir gauche (X = -16, juste après le sidewalk)
-	spawnCar("Car_W1", -16, -42, Color3.fromRGB(120, 30, 60), Color3.fromRGB(255, 50, 200), parent)
-	spawnCar("Car_W2", -16, -20, Color3.fromRGB(20, 40, 80), Color3.fromRGB(0, 220, 255), parent)
-	spawnCar("Car_W3", -16, 5, Color3.fromRGB(40, 40, 40), Color3.fromRGB(120, 255, 180), parent)
+	-- Voitures parquées sur la rue, contre le trottoir gauche (X = -8, sur l'asphalte)
+	spawnCar("Car_W1", -8, -42, Color3.fromRGB(120, 30, 60), Color3.fromRGB(255, 50, 200), parent)
+	spawnCar("Car_W2", -8, -20, Color3.fromRGB(20, 40, 80), Color3.fromRGB(0, 220, 255), parent)
+	spawnCar("Car_W3", -8, 5, Color3.fromRGB(40, 40, 40), Color3.fromRGB(120, 255, 180), parent)
 
-	-- Côté droit (X = +16)
-	spawnCar("Car_E1", 16, -42, Color3.fromRGB(180, 90, 30), Color3.fromRGB(255, 150, 50), parent)
-	spawnCar("Car_E2", 16, -20, Color3.fromRGB(30, 30, 60), Color3.fromRGB(180, 50, 255), parent)
-	spawnCar("Car_E3", 16, 5, Color3.fromRGB(60, 60, 70), Color3.fromRGB(0, 200, 255), parent)
+	-- Voitures côté droit (X = +8, sur l'asphalte contre le trottoir droit)
+	spawnCar("Car_E1", 8, -42, Color3.fromRGB(180, 90, 30), Color3.fromRGB(255, 150, 50), parent)
+	spawnCar("Car_E2", 8, -20, Color3.fromRGB(30, 30, 60), Color3.fromRGB(180, 50, 255), parent)
+	spawnCar("Car_E3", 8, 5, Color3.fromRGB(60, 60, 70), Color3.fromRGB(0, 200, 255), parent)
 end
 
 return Vehicles

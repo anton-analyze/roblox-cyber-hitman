@@ -15,6 +15,7 @@ end
 
 local specs = {}
 findSpecs(ServerScriptService.Source, specs)
+findSpecs(ReplicatedStorage.Shared, specs)
 
 if #specs == 0 then
 	print("[SpecRunner] no .spec modules found, skipping")

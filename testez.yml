@@ -1,0 +1,28 @@
+---
+base: lua51
+
+globals:
+  describe:
+    args:
+      - type: string
+      - type: function
+  it:
+    args:
+      - type: string
+      - type: function
+  beforeAll:
+    args:
+      - type: function
+  beforeEach:
+    args:
+      - type: function
+  afterAll:
+    args:
+      - type: function
+  afterEach:
+    args:
+      - type: function
+  expect:
+    any: true
+    args:
+      - type: any

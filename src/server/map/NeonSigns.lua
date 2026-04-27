@@ -50,11 +50,16 @@ function NeonSigns.build(parent: Instance)
 	makePart("East_HorzSign_2", Vector3.new(0.2, 1.2, 4), Vector3.new(15.9, 11, 12), Color3.fromRGB(120, 255, 180)).Parent =
 		signs
 
-	-- Enseignes "skybridge" : suspendues au-dessus de la rue, façon vieux Tokyo électrique
-	makePart("SkyBanner_1", Vector3.new(8, 0.8, 0.2), Vector3.new(0, 18, -25), Color3.fromRGB(255, 50, 200)).Parent =
+	-- Néons rooftop sur les Corp Towers (visibles de loin, classique cyberpunk)
+	-- CorpTower_West est à (-25, -35, h60), top à Y = 1.5 + 60 = 61.5
+	makePart("RoofSign_CorpW", Vector3.new(12, 3, 0.4), Vector3.new(-15.5, 64, -35), Color3.fromRGB(0, 220, 255)).Parent =
 		signs
-	makePart("SkyBanner_2", Vector3.new(6, 0.6, 0.2), Vector3.new(0, 14, 0), Color3.fromRGB(0, 220, 255)).Parent = signs
-	makePart("SkyBanner_3", Vector3.new(7, 0.7, 0.2), Vector3.new(0, 16, 22), Color3.fromRGB(255, 200, 50)).Parent =
+	-- CorpTower_East est à (25, -35, h50), top à Y = 51.5
+	makePart("RoofSign_CorpE", Vector3.new(12, 3, 0.4), Vector3.new(15.5, 54, -35), Color3.fromRGB(255, 50, 200)).Parent =
+		signs
+
+	-- Néon rooftop sur Sniper Building (top à Y = 1.5 + 28 = 29.5)
+	makePart("RoofSign_Sniper", Vector3.new(8, 2, 0.4), Vector3.new(15.5, 32, 38), Color3.fromRGB(255, 200, 50)).Parent =
 		signs
 
 	signs.Parent = parent
