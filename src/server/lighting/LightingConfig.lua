@@ -7,20 +7,20 @@ local Lighting = game:GetService("Lighting")
 local LightingConfig = {}
 
 function LightingConfig.apply()
-	-- Couleur globale
-	Lighting.Ambient = Color3.fromRGB(20, 20, 35)
-	Lighting.OutdoorAmbient = Color3.fromRGB(15, 15, 30)
-	Lighting.Brightness = 0.3
+	-- Couleur globale (clair pour voir mais ambiance violette gardée)
+	Lighting.Ambient = Color3.fromRGB(45, 40, 65)
+	Lighting.OutdoorAmbient = Color3.fromRGB(40, 35, 55)
+	Lighting.Brightness = 1.5
 	Lighting.ClockTime = 0 -- minuit
 
-	-- Soleil/lune : faible
+	-- Soleil/lune
 	Lighting.GeographicLatitude = 35 -- Tokyo
-	Lighting.ExposureCompensation = 0
+	Lighting.ExposureCompensation = 0.2
 
-	-- Fog cyberpunk
-	Lighting.FogColor = Color3.fromRGB(40, 20, 60) -- violet sombre
-	Lighting.FogStart = 50
-	Lighting.FogEnd = 300
+	-- Fog cyberpunk (plus loin pour qu'on voie la ville)
+	Lighting.FogColor = Color3.fromRGB(40, 20, 60)
+	Lighting.FogStart = 120
+	Lighting.FogEnd = 600
 
 	-- Atmosphere effect (si pas déjà là)
 	local atmosphere = Lighting:FindFirstChildOfClass("Atmosphere")
@@ -28,12 +28,12 @@ function LightingConfig.apply()
 		atmosphere = Instance.new("Atmosphere")
 		atmosphere.Parent = Lighting
 	end
-	atmosphere.Density = 0.4
+	atmosphere.Density = 0.2
 	atmosphere.Offset = 0.25
-	atmosphere.Color = Color3.fromRGB(60, 40, 80)
+	atmosphere.Color = Color3.fromRGB(80, 60, 100)
 	atmosphere.Decay = Color3.fromRGB(106, 112, 125)
 	atmosphere.Glare = 0
-	atmosphere.Haze = 1.5
+	atmosphere.Haze = 0.8
 end
 
 return LightingConfig

@@ -3,7 +3,10 @@
 -- Toute la géométrie de base (rue, trottoirs, passages piétons, bâtiments…)
 -- vit ici, pas dans le fichier .rbxl. Avantage : Git diffs lisibles.
 
+local ServerScriptService = game:GetService("ServerScriptService")
 local Workspace = game:GetService("Workspace")
+
+local Buildings = require(ServerScriptService.Source.map.Buildings)
 
 local MapBuilder = {}
 
@@ -125,6 +128,9 @@ function MapBuilder.build()
 	-- Passages piétons (2) : un au sud (Z=-30), un au nord (Z=+10, avant la ruelle).
 	buildCrosswalk("Crosswalk_South", -30, city)
 	buildCrosswalk("Crosswalk_Mid", 10, city)
+
+	-- Bâtiments cyberpunk (8 au total, deux côtés de la rue).
+	Buildings.build(city)
 
 	city.Parent = Workspace
 end
