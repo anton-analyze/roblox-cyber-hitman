@@ -36,8 +36,8 @@ Inspirations : franchise *Hitman*, esthétique *Cyberpunk 2077* / *Blade Runner 
 
 ### Livrables
 - ✅ Compte GitHub Anton (`anton-analyze`) + repo `roblox-cyber-hitman` créé via `gh repo create` (Anton choisit public ou privé à la création — public conseillé pour montrer ton travail)
-- ✅ **Aftman** installé, fichier `aftman.toml` qui épingle `rojo-rbx/rojo` à une version précise
-- ✅ **Rojo** installé via Aftman
+- ✅ **Rokit** installé (successeur moderne d'Aftman, par la même équipe que Rojo), fichier `rokit.toml` qui épingle `rojo-rbx/rojo` à une version précise
+- ✅ **Rojo** installé via Rokit
 - ✅ **Plugin Rojo** installé dans Roblox Studio (via Plugin Marketplace)
 - ✅ Structure de dossiers (voir section 5)
 - ✅ Fichier `default.project.json` minimal qui définit `ServerScriptService`, `StarterPlayerScripts`, `ReplicatedStorage`, `Workspace`
@@ -83,6 +83,7 @@ Un quartier qu'on a envie d'explorer **même sans rien y faire**. C'est l'accroc
 - Bruit ambient ville (rumeur basse, ventilation, klaxons lointains)
 - 1 piste musicale synthwave en boucle
 - Bruit de pluie
+- ⚠️ **Contrainte légale** : Roblox a durci les règles audio. **Aucun audio "trouvé sur internet" ou pris dans le toolbox sans vérification.** Sources autorisées : (a) audio uploadé par Anton lui-même (Roblox vérifie automatiquement les droits), (b) Roblox Audio Library officielle filtrée "free to use", (c) musiciens indé qui licencient explicitement pour Roblox (cherche sur le devforum). À traiter dans le plan V1.
 
 **Vie de la ville (~10%)**
 - 3–5 PNJ piétons sur trajets prédéfinis (`Animation.Walk` en boucle, pas d'IA, pas d'interaction)
@@ -153,8 +154,9 @@ roblox-cyber-hitman/
 Ces choix seront tranchés au moment de leur version respective ; **ne pas les pré-décider** :
 
 - **V4 — Voix Agent 47** : 3 options (a) ElevenLabs IA payant ~5€/mois, (b) enregistrement humain, (c) TTS gratuit. À décider début V4.
-- **V2 — Système d'IA gardes** : pathfinding Roblox natif vs librairie communautaire. À décider après recherche repos.
-- **V3 — Architecture réseau multijoueur** : Knit / Matter / vanilla RemoteEvents. À décider début V3.
+- **V2 — Système d'IA gardes** : pathfinding Roblox natif + scripts perso, vs plugin "NoobAI" (gratuit, 1600+ installs sur le devforum, patrouille + chase + line-of-sight clés-en-main). NoobAI est probablement le bon choix pour démarrer vite. À confirmer début V2.
+- **V3 — Architecture réseau multijoueur** : **Sleitnick/RbxUtil** (le successeur moderne de Knit, Knit étant archivé en 2025) / **Matter** (ECS) / vanilla RemoteEvents. RbxUtil semble par défaut la bonne option (modulaire, MIT, maintenu). À confirmer début V3.
+- **V3 — Persistance données joueur** : **MadStudioRoblox/ProfileService** (standard de l'industrie, 322 stars, Apache-2.0) sera quasi-certainement le choix — écrire ses propres DataStores perd des données joueurs en pratique. À confirmer début V3.
 
 ## 8. Risques connus & mitigations
 
@@ -169,3 +171,7 @@ Ces choix seront tranchés au moment de leur version respective ; **ne pas les p
 ## 9. Définition de "fini" pour ce spec
 
 Ce spec est "fini" quand Anton l'a relu et donné son OK. Le plan détaillé d'implémentation V0+V1 sera écrit ensuite via la skill `superpowers:writing-plans` dans `docs/superpowers/plans/2026-04-27-v0-v1-implementation.md`.
+
+## 10. Recherche complémentaire
+
+Une recherche de repos publics utiles a été menée le 2026-04-27 et sauvegardée dans `~/Documents/Roblox/research-2026-04-27.md`. Les trouvailles qui impactent ce spec sont déjà intégrées (Rokit, RbxUtil, ProfileService, NoobAI, contrainte audio). Le rapport complet contient ~6 catégories de ressources additionnelles à exploiter au fur et à mesure des versions.
