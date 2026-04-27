@@ -1,0 +1,15 @@
+# Rojo / build outputs
+*.rbxl.lock
+*.rbxlx.lock
+build/
+
+# OS
+.DS_Store
+Thumbs.db
+
+# Editors
+.vscode/settings.json
+.idea/
+
+# Rokit cache
+.rokit-cache/
