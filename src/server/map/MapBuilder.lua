@@ -7,6 +7,8 @@ local ServerScriptService = game:GetService("ServerScriptService")
 local Workspace = game:GetService("Workspace")
 
 local Buildings = require(ServerScriptService.Source.map.Buildings)
+local NeonSigns = require(ServerScriptService.Source.map.NeonSigns)
+local Vehicles = require(ServerScriptService.Source.map.Vehicles)
 
 local MapBuilder = {}
 
@@ -131,6 +133,12 @@ function MapBuilder.build()
 
 	-- Bâtiments cyberpunk (8 au total, deux côtés de la rue).
 	Buildings.build(city)
+
+	-- Enseignes néon supplémentaires (banderoles, néons verticaux/horizontaux).
+	NeonSigns.build(city)
+
+	-- Voitures cyberpunk parquées le long des trottoirs.
+	Vehicles.build(city)
 
 	city.Parent = Workspace
 end
